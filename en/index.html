@@ -7,7 +7,7 @@
 <meta name="description" content="Private fishing trips around Cozumel, Mexico. One boat, one crew, your family and friends — a relaxed day on the Caribbean sea.">
 <link rel="alternate" hreflang="en" href="index.html">
 <link rel="alternate" hreflang="es" href="../es/index.html">
-<link rel="alternate" hreflang="x-default" href="index.html">
+<link rel="alternate" hreflang="x-default" href="../en/index.html">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -17,10 +17,10 @@
     <div class="brand"><a href="index.html" class="logo">PEQUES CREW EXCURSION</a><span class="brand-logo" role="img" aria-label="Client logo placeholder"></span></div>
     <nav class="main-nav">
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="fishing.html">Fishing</a></li>
-        <li><a href="boat.html">Boat</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="#build-your-trip" class="nav-cta">Book</a></li>
+        <li><a href="boat-gallery.html">Boat & Gallery</a></li>
+        <li><a href="book.html" class="nav-cta">Book</a></li>
         <li class="lang"><a href="index.html" aria-current="page">EN</a> &middot; <a href="../es/index.html">ES</a></li>
       </ul>
     </nav>
@@ -38,7 +38,7 @@
     <p class="eyebrow on-dark">COZUMEL &middot; CARIBBEAN SEA</p>
     <h1>A day on the water<br>you'll remember</h1>
     <div class="hero-ctas">
-      <a href="#build-your-trip" class="btn btn-primary">Plan Your Day</a>
+      <a href="book.html" class="btn btn-primary">Plan Your Day</a>
     </div>
   </div>
   <a href="#ocean-marquee" class="hero-scroll">Explore</a>
@@ -105,96 +105,30 @@
   </div>
 </section>
 
-<!-- ================= BUILD YOUR TRIP ================= -->
-<section class="section" id="build-your-trip">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Build your trip</p>
-      <h2>Plan your day on the water</h2>
-      <p>Pick your date, group size, duration and what you're after — we'll confirm the details with you directly.</p>
-    </div>
 
-    <form id="trip-builder" class="builder reveal">
-      <div>
-        <div class="builder-field">
-          <label for="trip-date">Date</label>
-          <input type="date" id="trip-date" name="date">
-        </div>
-        <div class="builder-field">
-          <label for="trip-guests">Number of guests</label>
-          <input type="number" id="trip-guests" name="guests" min="1" max="12" placeholder="e.g. 4">
-        </div>
-        <div class="builder-field">
-          <label for="trip-duration">Duration</label>
-          <select id="trip-duration" name="duration">
-            <option value="">Select duration</option>
-            <option value="4h">4 hours</option>
-            <option value="6h">6 hours</option>
-            <option value="8h">8 hours</option>
-          </select>
-        </div>
-        <div class="builder-field">
-          <label for="trip-target">What are you after?</label>
-          <select id="trip-target" name="target">
-            <option value="">Select target</option>
-            <option value="mahi">Mahi-Mahi</option>
-            <option value="wahoo">Wahoo</option>
-            <option value="sailfish">Sailfish</option>
-            <option value="mixed">Not sure — mixed / whatever's biting</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="trip-summary">
-        <h3>Your trip</h3>
-        <dl>
-          <dt>Date</dt><dd id="summary-date">—</dd>
-          <dt>Guests</dt><dd id="summary-guests">—</dd>
-          <dt>Duration</dt><dd id="summary-duration">—</dd>
-          <dt>Target</dt><dd id="summary-target">—</dd>
-        </dl>
-        <div class="total">
-          <span>Total</span>
-          <strong id="summary-total">Price on request</strong>
-        </div>
-        <p class="note">Pricing is confirmed directly with the captain before payment. Final total pending client rates.</p>
-        <a href="#" id="book-and-pay" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:18px" target="_blank" rel="noopener noreferrer" aria-disabled="true">
-          Book &amp; Pay — Mercado Pago
-        </a>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- ================= BOAT — IMMERSIVE ================= -->
-<section class="boat-immersive">
-  <div class="placeholder">[ PLACEHOLDER — BIG BOAT PHOTO ]</div>
-  <div class="wrap boat-immersive-content reveal">
-    <p class="eyebrow on-dark">The boat</p>
-    <h2>Built for the Caribbean</h2>
-    <p>Maintained, equipped, and run by a crew who knows these waters.</p>
-    <a href="boat.html" class="btn btn-secondary" style="margin-top:22px">See the Boat</a>
-  </div>
-</section>
-
-<!-- ================= GALLERY — MASONRY ================= -->
+<!-- ================= EXPLORE — PREVIEW CARDS ================= -->
 <section class="section on-light">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Gallery</p>
-      <h2>Is this real? Yes.</h2>
+      <p class="eyebrow">Ready for more?</p>
+      <h2>Plan your day</h2>
     </div>
-    <div class="gallery-masonry reveal">
-      <div class="col wide">
-        <a href="gallery.html"><div class="placeholder">[ PHOTO ]</div></a>
-      </div>
-      <div class="col">
-        <a href="gallery.html"><div class="placeholder">[ PHOTO ]</div></a>
-        <a href="gallery.html"><div class="placeholder">[ PHOTO ]</div></a>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:32px">
-      <a href="gallery.html" class="btn btn-dark">View Full Gallery</a>
+    <div class="preview-grid">
+      <a href="fishing.html" class="preview-card reveal">
+        <h3>The fishing experience</h3>
+        <p>Species, seasons, trip options and what to expect on the water.</p>
+        <span class="link">Discover fishing →</span>
+      </a>
+      <a href="boat-gallery.html" class="preview-card reveal">
+        <h3>The boat &amp; gallery</h3>
+        <p>Meet the boat, the captain, and see real photos from past trips.</p>
+        <span class="link">See the boat →</span>
+      </a>
+      <a href="book.html" class="preview-card reveal">
+        <h3>Build your trip</h3>
+        <p>Pick your date, guests and duration, then book &amp; pay.</p>
+        <span class="link">Book now →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -236,71 +170,34 @@
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
-<section class="section" id="faq">
+
+<!-- ================= FAQ — PREVIEW ================= -->
+<section class="section">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">FAQ</p>
-      <h2>Before you go</h2>
+      <p class="eyebrow">Questions?</p>
+      <h2>What's stopping you from booking?</h2>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Do I need fishing experience?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>Not at all. Whether it's your first time fishing or you already know your way around a rod, the captain will guide you throughout the trip.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Can children join the trip?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>Yes. Families are welcome aboard. Children must be accompanied and supervised by an adult at all times.<span class="faq-note">Minimum age pending confirmation with the client.</span></p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What is included in the trip?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>Your private boat, captain, fishing equipment and bait are included.<span class="faq-note">Water, drinks, licenses and other inclusions pending confirmation with the client.</span></p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What should I bring?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>Bring comfortable clothes, sunglasses, a hat, biodegradable sunscreen and a towel. A camera is always a good idea. Keep personal belongings to a minimum, as storage on board is limited.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What happens if the weather is bad?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>Safety comes first. If weather or sea conditions are not safe for the trip, we will work with you to reschedule or refund your booking.<span class="faq-note">Exact weather policy pending confirmation with the client.</span></p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What fish can we catch?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>It depends on the season, conditions and what's biting that day. Around Cozumel, you may encounter species such as Mahi-Mahi, Wahoo, Sailfish and Tuna. Fishing is unpredictable, so no specific catch can be guaranteed.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Where does the boat depart from?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>We depart from Cozumel. Your exact meeting point and boarding instructions will be provided with your booking confirmation.<span class="faq-note">Marina / pier pending confirmation with the client.</span></p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What is the cancellation policy?</span><span class="faq-icon"></span>
-        </button>
-        <div class="faq-answer"><p>Booking your trip requires a deposit, which is non-refundable. We understand that travel plans can change — please contact us as soon as possible if you need to reschedule.<span class="faq-note">Deposit amount and rescheduling terms pending confirmation with the client.</span></p></div>
-      </div>
-    </div>
-    <div class="faq-contact reveal">
-      <p>Still have questions?</p>
-      <a href="https://wa.me/52XXXXXXXXXX" class="btn btn-whatsapp" target="_blank" rel="noopener">Message us on WhatsApp</a>
-    </div>
+    <ul class="check-list confirmed reveal" style="max-width:520px">
+      <li>Do I need fishing experience?</li>
+      <li>What is included in the trip?</li>
+      <li>What happens if the weather is bad?</li>
+    </ul>
+    <p class="reveal" style="margin-top:16px"><a href="book.html#faq" style="color:var(--color-sea-teal);font-weight:600">See all FAQs →</a></p>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- ================= FINAL CTA — TROPICAL ================= -->
+<section class="final-cta fullscreen">
+  <div class="placeholder">[ PLACEHOLDER — SUNSET / BOAT PHOTO ]</div>
+  <div class="accent-shape" style="right:6%; bottom:10%;" aria-hidden="true"></div>
+  <div class="wrap final-cta-inner reveal">
+    <h2>Ready for the water?</h2>
+    <p>No rush, no crowds — just a good day out.</p>
+    <a href="book.html" class="btn btn-primary">Book Your Trip</a>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -310,9 +207,10 @@
       </div>
       <div>
         <h4>Explore</h4>
+        <a href="index.html">Home</a>
         <a href="fishing.html">Fishing</a>
-        <a href="boat.html">The Boat</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="boat-gallery.html">Boat & Gallery</a>
+        <a href="book.html">Book</a>
       </div>
       <div>
         <h4>Follow</h4>
@@ -330,9 +228,8 @@
     </div>
   </div>
 </footer>
-
 <a href="https://wa.me/52XXXXXXXXXX" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.2.6 4.3 1.7 6.1L4 29l8.1-1.6c1.8.9 3.8 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.5.9.9-4.4-.2-.4C5.6 17.7 5 16.4 5 15c0-6.1 5-11 11-11s11 4.9 11 11-4.9 10.8-11 10.8zm5.6-8.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.6-.6-2.6-2.2-2.7-2.3-.1-.2 0-.3.1-.4l.5-.6c.1-.2.1-.3 0-.5-.1-.2-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.2-.2-.4-.3z"/></svg></a>
+
 <script src="../js/main.js"></script>
-<script src="../js/booking.js"></script>
 </body>
 </html>

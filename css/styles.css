@@ -612,3 +612,48 @@ h1,h2,h3{
 }
 .social-icons a:hover{ background: var(--color-sea-teal); transform: translateY(-2px); }
 .social-icons svg{ width:18px; height:18px; }
+
+/* ---------------- PREVIEW CARDS (Home → Fishing/Boat&Gallery/Book) — MOBILE FIRST ---------------- */
+.preview-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
+.preview-card{
+  display:block; border:1px solid var(--color-border); padding:26px;
+  border-radius: var(--radius); background:#fff;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.preview-card:hover{ border-color: var(--color-sea-teal); transform: translateY(-3px); }
+.preview-card h3{ font-family: var(--font-display); font-size:1.25rem; }
+.preview-card p{ color: var(--color-text-muted); margin-top:10px; font-size:0.92rem; }
+.preview-card .link{ margin-top:14px; display:inline-block; color: var(--color-sea-teal); font-weight:600; font-size:0.88rem; }
+@media (min-width: 800px){ .preview-grid{ grid-template-columns: repeat(3,1fr); gap:24px; } }
+
+/* ---------------- MONTH / SEASON STRIP — MOBILE FIRST ---------------- */
+.month-strip{ display:grid; grid-template-columns: 1fr; gap:10px; }
+.month-strip .quarter{
+  border:1px solid var(--color-border); padding:16px; text-align:center;
+  border-radius: var(--radius); font-size:0.85rem; letter-spacing:0.03em;
+  color: var(--color-text-muted);
+}
+@media (min-width: 600px){ .month-strip{ grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 900px){ .month-strip{ grid-template-columns: repeat(4,1fr); } }
+
+/* ---------------- INCLUDED / PENDING CHECKLIST — MOBILE FIRST ---------------- */
+.check-grid{ display:grid; grid-template-columns:1fr; gap:28px; }
+.check-list{ list-style:none; padding:0; margin:0; }
+.check-list li{ display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; font-size:0.95rem; }
+.check-list.confirmed li::before{ content:'✓'; color: var(--color-sea-teal); font-weight:700; flex-shrink:0; }
+.check-list.pending li{ color: var(--color-text-muted); }
+.check-list.pending li::before{ content:'□'; flex-shrink:0; }
+@media (min-width: 800px){ .check-grid{ grid-template-columns:1fr 1fr; gap:40px; } }
+
+/* ---------------- STEP FLOW (day-by-day experience) — MOBILE FIRST ---------------- */
+.step-flow{ display:flex; flex-direction:column; gap:0; max-width:640px; }
+.step-flow li{
+  display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--color-border);
+  font-size:0.95rem; color: var(--color-text-muted); align-items:flex-start;
+}
+.step-flow li span{ font-family:var(--font-display); color:var(--color-sea-teal); font-size:1.1rem; flex-shrink:0; width:28px; }
+
+/* ---------------- PHOTO ROW (boat-gallery category groups) — MOBILE FIRST ---------------- */
+.photo-row{ display:grid; grid-template-columns:1fr; gap:14px; }
+.photo-row .placeholder{ aspect-ratio: 4/3; }
+@media (min-width: 800px){ .photo-row{ grid-template-columns: repeat(3,1fr); } }

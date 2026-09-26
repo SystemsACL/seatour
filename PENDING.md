@@ -1,8 +1,10 @@
 # Pending from client
 
-Structure is bilingual: /en (built) + /es (folder created, empty — pending
-translation). Shared /css, /js, /img, /video sit at the root and are used by
-both language versions via relative paths (../css, ../js, etc.). Root
+Site architecture (Sep 2026): Home / Fishing / Boat & Gallery / Book, in
+/en and /es. Boat + Gallery were merged into one page (boat-gallery.html).
+Home was lightened to previews that link out to Fishing, Boat & Gallery
+and Book — the full trip builder and FAQ now live only on Book
+(book.html). Shared /css, /js, /img, /video sit at the root. Root
 /index.html redirects to /en/ for now.
 
 This build uses placeholders where real content wasn't available. Replace before launch:
@@ -17,9 +19,7 @@ This build uses placeholders where real content wasn't available. Replace before
 - [ ] Real reviews / TripAdvisor link
 - [ ] Deposit amount / rescheduling terms (cancellation FAQ confirms deposit is non-refundable, exact amount pending)
 - [ ] Social links (Instagram, Facebook, TikTok, TripAdvisor) in footer — currently "#". Icons are generic placeholders; swap for official brand assets if pixel-perfect logos are required.
-- [ ] Captain's ~500-character biography → boat.html, "Meet the captain" section
-- [ ] WhatsApp number → replace 52XXXXXXXXXX (used in the floating WhatsApp button on every page, plus the FAQ "Message us on WhatsApp" link on Home)
+- [ ] Captain's ~500-character biography → boat-gallery.html, "Meet the captain" section
+- [ ] WhatsApp number → replace 52XXXXXXXXXX (used in the floating WhatsApp button on every page, plus the FAQ "Message us on WhatsApp" link on Book)
 - [ ] FAQ answers marked "pending confirmation with the client" (min. age for kids, exact inclusions, weather/cancellation policy, marina/pier) → confirm real answers
 - [ ] Map: departure marina / exact location, then embed Google Maps or Mapbox in index.html
-- [ ] Spanish version (/es/index.html, fishing.html, boat.html, gallery.html) — translated copy, same structure as /en
-- [ ] Enable the ES nav link once /es pages exist (currently shown greyed-out/disabled)
