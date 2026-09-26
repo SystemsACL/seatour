@@ -116,7 +116,7 @@ h1,h2,h3{
 }
 .logo{
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 0.82rem;
   color: var(--color-white);
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -169,7 +169,7 @@ h1,h2,h3{
 @media (min-width: 860px){
   .site-header{ background: transparent; padding: 22px 0; }
   .site-header.solid{ padding: 14px 0; }
-  .logo{ font-size: 1.35rem; }
+  .logo{ font-size: 1rem; }
   .nav-toggle{ display:none; }
   .main-nav ul{
     position:static; min-height:auto; background:none;
@@ -373,9 +373,6 @@ h1,h2,h3{
 .review-card .who{ margin-top:14px; font-size:0.8rem; color: var(--color-text-muted); }
 @media (min-width: 800px){ .review-grid{ grid-template-columns: repeat(3,1fr); gap:28px; } }
 
-/* Final CTA */
-/* .final-cta base rules moved below — photo-led tropical version */
-
 /* ---------------- FAQ ACCORDION — MOBILE FIRST ---------------- */
 .faq-list{ border-top:1px solid var(--color-border); max-width:760px; }
 .faq-item{ border-bottom:1px solid var(--color-border); }
@@ -425,6 +422,26 @@ h1,h2,h3{
   .contact-form button{ width:auto; }
 }
 
+/* ---------------- AVAILABILITY / WHATSAPP CTA BLOCK (book.html) ---------------- */
+.availability-block{
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 28px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items:center;
+}
+.availability-block h3{ font-size:1.05rem; }
+.availability-block p{ color: var(--color-text-muted); font-size:0.92rem; margin-top:8px; }
+.availability-block .btn-whatsapp{ width:100%; justify-content:center; }
+@media (min-width: 700px){
+  .availability-block{ grid-template-columns: 1fr auto; padding:32px 36px; }
+  .availability-block .btn-whatsapp{ width:auto; }
+}
+
 /* Footer — mobile first */
 .site-footer{ background: var(--color-ocean-deep); color: rgba(255,255,255,0.75); padding: 48px 0 26px; }
 .footer-grid{ display:grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
@@ -437,6 +454,17 @@ h1,h2,h3{
   .footer-grid{ grid-template-columns: 2fr 1fr 1fr; gap:40px; margin-bottom:40px; }
   .footer-bottom{ flex-direction:row; justify-content:space-between; }
 }
+
+/* ---------------- FOOTER CREDIT — MOBILE FIRST ---------------- */
+.footer-credit{
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  width: 100%;
+}
+.footer-credit a{ color: #2196F3; font-weight:600; }
+.footer-credit a:hover{ text-decoration: underline; }
 
 /* Reveal on scroll */
 .reveal{ opacity:0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
@@ -612,59 +640,3 @@ h1,h2,h3{
 }
 .social-icons a:hover{ background: var(--color-sea-teal); transform: translateY(-2px); }
 .social-icons svg{ width:18px; height:18px; }
-
-/* ---------------- PREVIEW CARDS (Home → Fishing/Boat&Gallery/Book) — MOBILE FIRST ---------------- */
-.preview-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
-.preview-card{
-  display:block; border:1px solid var(--color-border); padding:26px;
-  border-radius: var(--radius); background:#fff;
-  transition: border-color var(--transition), transform var(--transition);
-}
-.preview-card:hover{ border-color: var(--color-sea-teal); transform: translateY(-3px); }
-.preview-card h3{ font-family: var(--font-display); font-size:1.25rem; }
-.preview-card p{ color: var(--color-text-muted); margin-top:10px; font-size:0.92rem; }
-.preview-card .link{ margin-top:14px; display:inline-block; color: var(--color-sea-teal); font-weight:600; font-size:0.88rem; }
-@media (min-width: 800px){ .preview-grid{ grid-template-columns: repeat(3,1fr); gap:24px; } }
-
-/* ---------------- MONTH / SEASON STRIP — MOBILE FIRST ---------------- */
-.month-strip{ display:grid; grid-template-columns: 1fr; gap:10px; }
-.month-strip .quarter{
-  border:1px solid var(--color-border); padding:16px; text-align:center;
-  border-radius: var(--radius); font-size:0.85rem; letter-spacing:0.03em;
-  color: var(--color-text-muted);
-}
-@media (min-width: 600px){ .month-strip{ grid-template-columns: repeat(2,1fr); } }
-@media (min-width: 900px){ .month-strip{ grid-template-columns: repeat(4,1fr); } }
-
-/* ---------------- INCLUDED / PENDING CHECKLIST — MOBILE FIRST ---------------- */
-.check-grid{ display:grid; grid-template-columns:1fr; gap:28px; }
-.check-list{ list-style:none; padding:0; margin:0; }
-.check-list li{ display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; font-size:0.95rem; }
-.check-list.confirmed li::before{ content:'✓'; color: var(--color-sea-teal); font-weight:700; flex-shrink:0; }
-.check-list.pending li{ color: var(--color-text-muted); }
-.check-list.pending li::before{ content:'□'; flex-shrink:0; }
-@media (min-width: 800px){ .check-grid{ grid-template-columns:1fr 1fr; gap:40px; } }
-
-/* ---------------- STEP FLOW (day-by-day experience) — MOBILE FIRST ---------------- */
-.step-flow{ display:flex; flex-direction:column; gap:0; max-width:640px; }
-.step-flow li{
-  display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--color-border);
-  font-size:0.95rem; color: var(--color-text-muted); align-items:flex-start;
-}
-.step-flow li span{ font-family:var(--font-display); color:var(--color-sea-teal); font-size:1.1rem; flex-shrink:0; width:28px; }
-
-/* ---------------- PHOTO ROW (boat-gallery category groups) — MOBILE FIRST ---------------- */
-.photo-row{ display:grid; grid-template-columns:1fr; gap:14px; }
-.photo-row .placeholder{ aspect-ratio: 4/3; }
-@media (min-width: 800px){ .photo-row{ grid-template-columns: repeat(3,1fr); } }
-
-/* ---------------- FOOTER CREDIT — MOBILE FIRST ---------------- */
-.footer-credit{
-  margin-top: 14px;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.5);
-  text-align: center;
-  width: 100%;
-}
-.footer-credit a{ color: #2196F3; font-weight:600; }
-.footer-credit a:hover{ text-decoration: underline; }
