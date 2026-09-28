@@ -1,63 +1,110 @@
 /* ==========================================================
    FISHING WEBSITE — COZUMEL
-   booking.js — "Build Your Trip" summary + Mercado Pago handoff
-   NOTE: Real prices were not provided by the client.
-   This script deliberately does NOT calculate or invent a
-   total. It only reflects the guest's selections back to them.
-   Once real pricing is provided, wire it in at the point
-   marked TODO below.
+   booking.js — "Armar mi día en el mar" card-based builder.
+
+   Scope (per CTO decision doc): this file owns builder STATE,
+   validation, and the Mercado Pago handoff. The small visual
+   feedback (card pop, progress dots, preview fade) is plain
+   CSS transitions triggered by class toggles here — no GSAP
+   dependency, so the booking flow never depends on a CDN.
+
+   NOTE: Real prices were not provided by the client. This
+   script deliberately does NOT calculate or invent a total.
+   Once real pricing is provided, wire it in at the TODO below.
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
-  var form = document.querySelector('#trip-builder');
-  if (!form) return;
+  var root = document.querySelector('.builder-experience');
+  if (!root) return;
 
-  // TODO: replace with the real Mercado Pago hosted payment link.
-  var MERCADO_PAGO_LINK = 'https://www.mercadopago.com/PLACEHOLDER-LINK';
+  var dateInput = root.querySelector('#trip-date');
+  var groups = root.querySelectorAll('.choice-grid');
+  var progressSteps = root.querySelectorAll('.builder-progress .step');
 
-  var dateInput = form.querySelector('#trip-date');
-  var guestsInput = form.querySelector('#trip-guests');
-  var durationSelect = form.querySelector('#trip-duration');
-  var targetSelect = form.querySelector('#trip-target');
+  var sumDate = root.querySelector('#summary-date');
+  var sumGuests = root.querySelector('#summary-guests');
+  var sumDuration = root.querySelector('#summary-duration');
+  var sumTarget = root.querySelector('#summary-target');
+  var sumTotal = root.querySelector('#summary-total');
+  var bookBtn = root.querySelector('#book-and-pay');
 
-  var sumDate = document.querySelector('#summary-date');
-  var sumGuests = document.querySelector('#summary-guests');
-  var sumDuration = document.querySelector('#summary-duration');
-  var sumTarget = document.querySelector('#summary-target');
-  var sumTotal = document.querySelector('#summary-total');
-  var bookBtn = document.querySelector('#book-and-pay');
+  var state = { date: '', guests: '', duration: '', target: '' };
 
-  function updateSummary() {
-    sumDate.textContent = dateInput.value || '—';
-    sumGuests.textContent = guestsInput.value ? guestsInput.value + ' guests' : '—';
-    sumDuration.textContent = durationSelect.value ? durationSelect.options[durationSelect.selectedIndex].text : '—';
-    sumTarget.textContent = targetSelect.value ? targetSelect.options[targetSelect.selectedIndex].text : '—';
+  /* ---------- Card selection (single-select per group) ---------- */
+  groups.forEach(function (group) {
+    var field = group.getAttribute('data-field');
+    group.querySelectorAll('.choice-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        group.querySelectorAll('.choice-card').forEach(function (c) {
+          c.classList.remove('is-selected');
+          c.setAttribute('aria-pressed', 'false');
+        });
+        card.classList.add('is-selected');
+        card.setAttribute('aria-pressed', 'true');
+        state[field] = card.getAttribute('data-value');
+        state[field + 'Label'] = card.querySelector('.choice-label').textContent.trim();
+        update();
+      });
+    });
+  });
 
-    // TODO: once the client provides real pricing per duration/guest count,
-    // calculate and display it here instead of this placeholder.
-    sumTotal.textContent = 'Price on request';
+  if (dateInput) {
+    dateInput.addEventListener('change', function () {
+      state.date = dateInput.value;
+      update();
+    });
+  }
 
-    var complete = dateInput.value && guestsInput.value && durationSelect.value && targetSelect.value;
-    // #book-and-pay is a real <a target="_blank"> so the browser handles the
-    // new-tab open natively (no window.open — avoids popup-blocker/file:// quirks).
-    // We only toggle whether it's a real link or an inert placeholder.
-    if (complete) {
-      bookBtn.href = MERCADO_PAGO_LINK;
-      bookBtn.removeAttribute('aria-disabled');
-    } else {
-      bookBtn.href = '#';
-      bookBtn.setAttribute('aria-disabled', 'true');
+  /* ---------- Live preview + progress + CTA ---------- */
+  function setFilled(el, text, filled) {
+    if (!el) return;
+    el.textContent = text;
+    el.closest('li').classList.toggle('is-filled', filled);
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '—';
+    var d = new Date(iso + 'T00:00:00');
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString(document.documentElement.lang === 'es' ? 'es-MX' : 'en-US', {
+      day: 'numeric', month: 'long'
+    });
+  }
+
+  function update() {
+    setFilled(sumDate, formatDate(state.date), !!state.date);
+    setFilled(sumGuests, state.guestsLabel || '—', !!state.guests);
+    setFilled(sumDuration, state.durationLabel || '—', !!state.duration);
+    setFilled(sumTarget, state.targetLabel || '—', !!state.target);
+
+    // TODO: once the client provides real pricing per duration/guest
+    // count, calculate and display it here instead of this placeholder.
+    sumTotal.textContent = document.documentElement.lang === 'es' ? 'Precio a confirmar' : 'Price on request';
+
+    var filledCount = [state.date, state.guests, state.duration, state.target].filter(Boolean).length;
+    progressSteps.forEach(function (step, i) {
+      step.classList.toggle('is-done', i < filledCount);
+      step.classList.toggle('is-active', i === filledCount);
+    });
+
+    var complete = state.date && state.guests && state.duration && state.target;
+    if (bookBtn) {
+      if (complete) {
+        // TODO: replace with the real Mercado Pago hosted payment link.
+        bookBtn.href = 'https://www.mercadopago.com/PLACEHOLDER-LINK';
+        bookBtn.removeAttribute('aria-disabled');
+      } else {
+        bookBtn.href = '#';
+        bookBtn.setAttribute('aria-disabled', 'true');
+      }
     }
   }
 
-  [dateInput, guestsInput, durationSelect, targetSelect].forEach(function (el) {
-    el.addEventListener('change', updateSummary);
-    el.addEventListener('input', updateSummary);
-  });
+  if (bookBtn) {
+    bookBtn.addEventListener('click', function (e) {
+      if (bookBtn.getAttribute('aria-disabled') === 'true') e.preventDefault();
+    });
+  }
 
-  updateSummary();
-
-  bookBtn.addEventListener('click', function (e) {
-    if (bookBtn.getAttribute('aria-disabled') === 'true') e.preventDefault();
-  });
+  update();
 });

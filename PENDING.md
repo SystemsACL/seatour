@@ -1,118 +1,90 @@
 # PENDING — Peques Crew Excursion
 
 Checklist de todo lo que falta por confirmar con el cliente o reemplazar
-antes de publicar el sitio. Generado a partir de los placeholders y notas
-dejadas directamente en el HTML/CSS/JS.
+antes de publicar el sitio.
 
-**Estructura actual del sitio (EN + ES):** `index.html` (Home), `fishing.html`,
-`boat-gallery.html`, `book.html` — cada uno con su hreflang cruzado.
+**Estructura actual (EN + ES):** `index.html` (Home), `fishing.html`,
+`gallery.html`, `book.html` — el bote y el capitán ahora viven juntos en
+`gallery.html` (antes eran `boat-gallery.html`).
 
-## 🔴 Decisión abierta (no técnica)
+## ✅ Ya resuelto en esta versión
 
-- [ ] **Dirección de tono/diseño**: se señaló que el sitio se sentía
-      "corporativo / agencia de turismo". La nueva sección **Welcome to
-      Cozumel / Bienvenido a Cozumel** (Home, entre el marquee y "The
-      Experience") es un primer paso hacia un tono más local y personal,
-      pero la dirección general sigue abierta a revisión.
+- [x] Copy en español reescrito (más personal, menos "agencia") en Home,
+      Fishing y Gallery
+- [x] Nav simplificado a 4 páginas: Home / Fishing / Gallery / Book
+- [x] Capa de animación moderna: **Lenis** (smooth scroll), **GSAP +
+      ScrollTrigger** (scroll reveals con stagger, parallax sutil en las
+      secciones `photo-break` / `boat-immersive` / `final-cta`),
+      **Splitting.js** (intro letra por letra en los H1 de hero/page-hero)
+- [x] Header con **glassmorphism** real (`backdrop-filter: blur`) al hacer
+      scroll, en vez de color sólido
+- [x] Tipografía actualizada: **Abril Fatface** (display/títulos) +
+      **IBM Plex Mono** (detalle tipo "ticket náutico": eyebrows, precio
+      del resumen de viaje, pasos numerados, franja de meses) + Inter
+      (cuerpo de texto)
+- [x] Todo con *progressive enhancement*: si el CDN de GSAP/Lenis/Splitting
+      falla, el contenido (`.reveal`) se queda visible por defecto — nunca
+      depende del JS externo para poder leerse
+
+## 🔴 Decisión que se dejó fuera (por instrucción explícita)
+
+- [ ] Se propuso una sección de "ruta trazada a mano" (Marina Cozumel →
+      Canal de Yucatán) con datos de ejemplo (25 min, profundidad,
+      hora de salida, precio). **Se omitió a petición explícita** — no
+      se agregó ni se inventó ningún dato de esa propuesta.
 
 ## 🖼️ Media (no se incluye en este entregable — reemplazo manual)
 
 - [ ] Video hero (~30s) → `video/hero.mp4`
 - [ ] Fotos: `img/hero/`, `img/boat/`, `img/captain/`, `img/cozumel/`,
-      `img/gallery/`, `img/species/`
+      `img/gallery/`
 - [ ] Logo del cliente → `img/logo/logo.png`
 
-## 👤 Captain / Crew (NUEVO — nombre real, historia, foto)
+## 👤 Capitán / tripulación
 
-- [ ] Nombre del capitán
-- [ ] Biografía (~500 caracteres en `boat-gallery.html`): historia,
-      experiencia, relación con Cozumel
-- [ ] Versión corta de la biografía para el teaser de Home
-      ("Meet the crew" / "Conoce a la tripulación")
-- [ ] Foto del capitán
+- [ ] Nombre del capitán, biografía (~500 caracteres en `gallery.html`),
+      versión corta para el teaser de Home, foto
 
 ## 📞 Contacto
 
 - [ ] Número real de WhatsApp — actualmente `52XXXXXXXXXX` en todas las
-      páginas (botón flotante + FAQ) y en `js/booking.js` si se usa como
-      respaldo
-- [ ] Links reales de Instagram, Facebook, TikTok y TripAdvisor (footer,
-      ahora con íconos SVG propios, actualmente apuntan a `#`)
+      páginas y en `js/booking.js`
+- [ ] Links reales de Instagram, Facebook, TikTok y TripAdvisor (footer)
 
 ## 📍 Ubicación
 
-- [ ] Marina / punto exacto de salida en Cozumel
-- [ ] Embed de Google Maps / Mapbox (Home → sección "Location")
+- [ ] Marina / punto exacto de salida
+- [ ] Embed de Google Maps / Mapbox (Home → "Location")
 
-## 🚤 El bote (NUEVO — antes no existía esta página)
+## 🚤 La embarcación (`gallery.html`)
 
-- [ ] Nombre del bote
-- [ ] Eslora, capacidad y descripción general (no publicar specs inventadas)
-- [ ] Equipo: cañas, carretes, señuelos, fishfinder/electrónica
-- [ ] Comodidades: sombra, baño, hielera, asientos
-- [ ] Seguridad: chalecos salvavidas, permisos/licencias, radio/comunicación
+- [ ] Nombre, capacidad, equipo, amenidades, seguridad — todo marcado
+      como `[ placeholder ]`, no publicar con specs inventadas
 
-## 🎣 Tipos y experiencia de pesca (NUEVO en `fishing.html`)
+## 🎣 Pesca (`fishing.html`)
 
-- [ ] Confirmar si se ofrece pesca de altura (Offshore/Deep Sea), costera
-      (Reef/Nearshore), o ambas — actualmente ambas están marcadas
-      "[Confirm with client]"
-- [ ] Confirmar temporadas reales por especie (Mahi-Mahi, Wahoo, Pez Vela,
-      Atún) — la franja de meses (ENE-DIC) es solo de referencia
-- [ ] Edad mínima para niños a bordo
+- [ ] Confirmar tipos de pesca reales (curricán / fondo, u otros)
+- [ ] Calendario real de temporadas (hoy dice "[ AQUÍ VA EL CALENDARIO
+      REAL DE TEMPORADAS ]")
+- [ ] Qué incluye exactamente cada duración (equipo confirmado; agua,
+      bebidas, snacks, licencias — pendientes, ya marcados como "por
+      confirmar" con las píldoras grises en el sitio)
 
 ## 💳 Pago y precios
 
-- [ ] Precios por duración (4h / 6h / 8h)
-- [ ] **Link real de Mercado Pago** → reemplazar
-      `MERCADO_PAGO_LINK` en `js/booking.js`
-      (`https://www.mercadopago.com/PLACEHOLDER-LINK`)
-- [ ] Confirmar si el link es único o distinto por paquete
-- [ ] Monto del depósito y si es reembolsable
-- [ ] Términos de reprogramación
+- [ ] Precios por duración (4h / 6h / 8h) — hoy dice "Precio a solicitar"
+- [ ] **Link real de Mercado Pago** → reemplazar `MERCADO_PAGO_LINK` en
+      `js/booking.js`
+- [ ] Monto del depósito y términos de reprogramación (FAQ en `book.html`)
 
-## ✅ Qué incluye cada viaje (`fishing.html` y `book.html`)
-
-Confirmados (ya en el sitio como "incluido"):
-- Bote privado, capitán, equipo de pesca, carnada
-
-Pendientes de confirmar (marcados visualmente como "pending" en el sitio):
-- [ ] Licencia de pesca
-- [ ] Agua / bebidas
-- [ ] Hielo
-- [ ] Comida / snacks
-- [ ] Traslado hotel / marina
-- [ ] Limpieza / preparación de la captura
-
-## ❓ FAQ — pendientes de confirmación (`book.html`)
+## ❓ FAQ — pendientes de confirmación
 
 - [ ] Edad mínima para niños
-- [ ] Inclusiones exactas (agua, bebidas, licencias)
 - [ ] Política exacta de mal clima
-- [ ] Marina / muelle de salida e instrucciones de abordaje
-- [ ] Monto del depósito y términos de reprogramación
+- [ ] Marina / muelle de salida
+- [ ] Monto del depósito y reprogramación
 
 ## ⭐ Testimonios
 
-- [ ] Reemplazar las 2 reseñas placeholder por citas reales de huéspedes
+- [ ] Reemplazar las 2 reseñas placeholder por citas reales
 - [ ] Link real al perfil de TripAdvisor
-
-## ✅ Ya resuelto en este entregable
-
-- [x] Estructura multi-página (Home / Fishing / Boat & Gallery / Book) en
-      lugar de una sola página larga, en EN y ES
-- [x] Nueva sección "Welcome to Cozumel" + teaser "Meet the Crew" en Home
-- [x] Página dedicada `fishing.html`: la experiencia paso a paso, especies,
-      temporadas de referencia, duraciones, qué incluye, qué llevar,
-      primerizos/familias, expectativas reales
-- [x] Página dedicada `boat-gallery.html`: el bote, equipo/comodidades/
-      seguridad, capitán, galería por categorías (bote, capturas,
-      clientes, Cozumel) con lightbox
-- [x] Página dedicada `book.html`: configurador + botón Book & Pay como
-      link real (no botón), con fallback deshabilitado hasta Mercado Pago,
-      pasos después de reservar, FAQ completo
-- [x] Footer con íconos SVG propios (Instagram/Facebook/TikTok/
-      TripAdvisor) y crédito "Powered by ACLSYS"
-- [x] `js/booking.js` actualizado: ya no inventa un total, solo refleja
-      la selección del huésped; el botón alterna entre link real de
-      Mercado Pago (TODO) e inerte según si el formulario está completo
