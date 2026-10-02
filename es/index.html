@@ -51,12 +51,9 @@
     <span>Mahi-Mahi</span><span>Wahoo</span><span>Pez Vela</span><span>Atún</span>
   </div>
 </section>
-<div class="wave-divider">
-  <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,50 L1440,100 L0,100 Z" fill="#F6FCFD"/></svg>
-</div>
 
 <!-- ================= 03 BIENVENIDO A COZUMEL ================= -->
-<section class="section on-light">
+<section class="section on-light has-curve" style="padding-bottom:clamp(110px,14vw,170px)">
   <div class="wrap experience-grid offset">
     <div class="placeholder reveal">
       [ PLACEHOLDER — FOTO: MAR CARIBE / COZUMEL ]
@@ -74,6 +71,8 @@
       <p class="eyebrow" style="margin-top:22px">Una embarcación &middot; Una tripulación &middot; Tu gente &middot; Tu día</p>
     </div>
   </div>
+  <!-- CURVE → white -->
+  <div class="curve swell-b" style="--curve-fill: var(--color-white)"></div>
 </section>
 
 <!-- CONOCE A LA TRIPULACIÓN — introducción breve, biografía completa en Galería -->
@@ -115,10 +114,14 @@
   <div class="placeholder">[ PLACEHOLDER — FOTO DE ACCIÓN GRANDE ]</div>
   <div class="accent-shape" style="left:8%; top:20%;" aria-hidden="true"></div>
   <p class="photo-break-text reveal">El Caribe no espera.<br>Tú tampoco deberías.</p>
+  <!-- CURVE (top) ← previous section is white -->
+  <div class="curve curve--top swell-c" style="--curve-fill: var(--color-white)"></div>
+  <!-- CURVE (bottom) → species is on-light -->
+  <div class="curve swell-a" style="--curve-fill: var(--color-off-white)"></div>
 </section>
 
 <!-- ================= 03 SPECIES — EDITORIAL ================= -->
-<section class="section on-light">
+<section class="section on-light has-curve" style="padding-bottom:clamp(110px,14vw,170px)">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Qué hay ahí fuera</p>
@@ -139,6 +142,8 @@
       </div>
     </div>
   </div>
+  <!-- CURVE → white -->
+  <div class="curve swell-b" style="--curve-fill: var(--color-white)"></div>
 </section>
 
 <!-- ================= 04 PLANEA TU VIAJE — PREVIEW ================= -->
@@ -162,16 +167,20 @@
 
 <!-- ================= 05 EMBARCACIÓN &amp; GALERÍA — PREVIEW ================= -->
 <section class="boat-immersive">
-  <div class="placeholder">[ PLACEHOLDER — FOTO GRANDE DEL EMBARCACIÓN ]</div>
+  <div class="placeholder">[ PLACEHOLDER — FOTO GRANDE DE LA EMBARCACIÓN ]</div>
   <div class="wrap boat-immersive-content reveal">
     <p class="eyebrow on-dark">La embarcación &amp; la galería</p>
-    <h2>Construido para el Caribe</h2>
-    <p>Mantenido, equipado, y operado por una tripulación que conoce estas aguas. Ve la embarcación, al capitán, y fotos reales de viajes.</p>
+    <h2>Construida para el Caribe</h2>
+    <p>Mantenida, equipada y operada por una tripulación que conoce estas aguas. Ve la embarcación, al capitán, y fotos reales de viajes.</p>
     <a href="gallery.html" class="btn btn-secondary" style="margin-top:22px">Ver la Galería</a>
   </div>
+  <!-- CURVE (top) ← previous section is white -->
+  <div class="curve curve--top swell-a" style="--curve-fill: var(--color-white)"></div>
+  <!-- CURVE (bottom) → gallery is on-light -->
+  <div class="curve swell-c" style="--curve-fill: var(--color-off-white)"></div>
 </section>
 
-<section class="section on-light">
+<section class="section on-light has-curve" style="padding-bottom:clamp(110px,14vw,170px)">
   <div class="wrap">
     <div class="gallery-masonry reveal">
       <div class="col wide">
@@ -186,10 +195,12 @@
       <a href="gallery.html" class="btn btn-dark">Ver Galería Completa</a>
     </div>
   </div>
+  <!-- CURVE → white -->
+  <div class="curve swell-a" style="--curve-fill: var(--color-white)"></div>
 </section>
 
 <!-- ================= 06 LOCATION ================= -->
-<section class="section">
+<section class="section has-curve" style="padding-bottom:clamp(110px,14vw,170px)">
   <div class="wrap">
     <div class="map-block reveal">
       <div class="placeholder">[ PLACEHOLDER — EMBED DE GOOGLE MAPS / MAPBOX ]</div>
@@ -200,10 +211,12 @@
       </div>
     </div>
   </div>
+  <!-- CURVE → off-white -->
+  <div class="curve swell-b" style="--curve-fill: var(--color-off-white)"></div>
 </section>
 
 <!-- ================= 07 REVIEWS ================= -->
-<section class="section on-light">
+<section class="section on-light has-curve" style="padding-bottom:clamp(110px,14vw,170px)">
   <div class="wrap">
     <div class="social-proof-head reveal">
       <p class="eyebrow">Lo que dicen los huéspedes</p>
@@ -223,6 +236,8 @@
     </div>
     <p class="tripadvisor-ref">Ve más reseñas en TripAdvisor — enlace pendiente.</p>
   </div>
+  <!-- CURVE → white -->
+  <div class="curve swell-c" style="--curve-fill: var(--color-white)"></div>
 </section>
 
 <!-- ================= 08 FAQ — PREVIEW ================= -->
@@ -263,20 +278,21 @@
 <section class="final-cta fullscreen">
   <div class="placeholder">[ PLACEHOLDER — FOTO DE ATARDECER / EMBARCACIÓN ]</div>
   <div class="accent-shape" style="right:6%; bottom:10%;" aria-hidden="true"></div>
-  <div class="wrap final-cta-inner reveal">
+  <div class="wrap final-cta-inner reveal" style="padding-top:150px;padding-bottom:150px">
     <h2>¿Listo para planear tu día?</h2>
     <p>Arma tu viaje y nosotros nos encargamos del resto.</p>
     <a href="book.html" class="btn btn-primary">Planea Tu Día</a>
   </div>
+  <!-- CURVE (bottom) → footer is ocean-deep -->
+  <div class="curve swell-a" style="--curve-fill: var(--color-ocean-deep)"></div>
 </section>
-
 
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <div class="brand" style="margin-bottom:14px"><div class="logo">PEQUES CREW EXCURSION</div><span class="brand-logo" role="img" aria-label="Client logo placeholder"></span></div>
-        <p style="max-width:340px;font-size:0.9rem">Viajes privados de pesca alrededor de Cozumel, México — un bote, una tripulación, familia y amigos bienvenidos.</p>
+        <p style="max-width:340px;font-size:0.9rem">Viajes privados de pesca alrededor de Cozumel, México — una embarcación, una tripulación, familia y amigos bienvenidos.</p>
       </div>
       <div>
         <h4>Explorar</h4>
@@ -302,8 +318,8 @@
     <p class="footer-credit">Desarrollado por <a href="https://aclsys.net/servicios" target="_blank" rel="noopener">ACLSYS</a></p>
   </div>
 </footer>
-<span class="wa-tip">¿Hablamos? 🌊</span>
-<a href="https://wa.me/529871114602?text=Hola%2C%20%C2%BFme%20das%20informaci%C3%B3n%3F%20Vi%20algo%20en%20el%20sitio%20web%2C%20%C2%BFme%20dan%20informaci%C3%B3n%3F" class="wa" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+<span class="wa-tip">Escríbenos 🌊</span>
+<a href="https://wa.me/529871114602?text=Hola%2C%20%C2%BFpodr%C3%ADan%20darme%20informaci%C3%B3n%3F%20Vi%20algo%20en%20el%20sitio%20web." class="wa" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <span class="ring"></span><span class="ring r2"></span>
   <span class="clip">
     <svg class="wave w2" viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10Q15 0 30 10T60 10T90 10T120 10V20H0Z"/></svg>
